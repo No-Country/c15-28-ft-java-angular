@@ -18,7 +18,7 @@ public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
-    @GetMapping("/{buscarTodos}")
+    @GetMapping("/buscarTodos")
     public List<Usuario> getUsuarios() {
         return usuarioService.getAll();
     }
