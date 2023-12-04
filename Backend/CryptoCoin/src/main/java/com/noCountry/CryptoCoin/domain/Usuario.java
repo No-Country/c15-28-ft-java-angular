@@ -22,6 +22,8 @@ public class Usuario {
     @Column(name = "email",unique = true, nullable = false)
     private String email;
 
-
-
+    public Usuario(String nombre, String email) {
+        this.nombre = nombre;
+        this.email = email;
+    }
 }
