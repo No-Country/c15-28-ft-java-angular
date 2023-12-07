@@ -32,8 +32,8 @@ public class UsuarioController {
     }
 
     @PostMapping("/guardarUsuario")
-    public void guardarUsuario(String nombre, String email) throws ExecutionException, InterruptedException {
-        usuarioService.guardarUsuario(nombre, email);
+    public void guardarUsuario(Usuario usuario) {
+        usuarioService.guardarUsuario(usuario);
     }
 
 }
