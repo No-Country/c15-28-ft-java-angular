@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFound404Component } from './shared/pages/not-found-404/not-found-404.component';
-import { LoginComponent } from './modules/auth/pages/login/login.component';
 
 export const routes: Routes = [
   {
@@ -11,16 +10,16 @@ export const routes: Routes = [
         path: 'login',
         title: 'Login',
         loadComponent: () =>
-          import('./modules/auth/pages/login/login.component').then(
-            (m) => m.LoginComponent
+          import('./modules/auth/pages/login/login-page.component').then(
+            (m) => m.LoginPageComponent
           ),
       },
       {
         path: 'register',
         title: 'Registro',
         loadComponent: () =>
-          import('./modules/auth/pages/register/register.component').then(
-            (m) => m.RegisterComponent
+          import('./modules/auth/pages/register/register-page.component').then(
+            (m) => m.RegisterPageComponent
           ),
       },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
