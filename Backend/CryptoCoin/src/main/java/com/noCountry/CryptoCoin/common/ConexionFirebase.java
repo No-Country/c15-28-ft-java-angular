@@ -9,7 +9,7 @@ import com.google.firebase.cloud.FirestoreClient;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class Conexion {
+public class ConexionFirebase {
 
     public static Firestore db;
 
@@ -19,7 +19,7 @@ public class Conexion {
             FileInputStream sa = new FileInputStream("src/main/resources/404exchange.json");
             FirebaseOptions options = FirebaseOptions.builder()
                     .setCredentials(GoogleCredentials.fromStream(sa))
-                    .setDatabaseUrl("https://<DATABASE_NAME>.firebaseio.com/")
+                    .setDatabaseUrl("https://exchangenocountry.firebaseio.com/")
                     .build();
 
             FirebaseApp.initializeApp(options);
