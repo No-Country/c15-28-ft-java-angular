@@ -1,0 +1,44 @@
+.Principal_Auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100dvh;
+
+  &-buttons {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+}
+
+ion-button {
+  span {
+    font-size: 1.25rem;
+    text-transform: lowercase;
+    text-transform: capitalize;
+  }
+
+  --color: #c7c6c6;
+  --background: #343030;
+  --background-activated: #343030aa;
+  --background-activated-opacity: 1;
+  --background-focused: #3430300f;
+  --background-focused-opacity: 1;
+  --background-hover: #343030;
+  --background-hover-opacity: 1;
+  --border-color: #343030ff;
+  --border-radius: 0.5rem;
+  --border-style: solid;
+  --opacity: 1;
+  --border-width: 1px;
+  --color-activated: #ffffff;
+  --color-focused: #ffffff;
+  --color-hover: #ffffff;
+  --padding-bottom: 2rem;
+  --padding-end: 2rem;
+  --padding-start: 2rem;
+  --padding-top: 2rem;
+  --transition: 15ms ease-in-out;
+}
