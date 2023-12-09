@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (onsubmit)="login()" class="FormLogin">
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="FormLogin">
   <h2 class="FormLogin__title">Iniciar sesión</h2>
   <ion-list>
     <ion-item>
@@ -25,12 +25,12 @@
         labelPlacement="floating"
         placeholder="Ingrese su contraseña"
       >
-        <ion-button slot="end" (click)="viewPassword()">
+        <ion-button type="button" slot="end" (click)="viewPassword()">
           <ion-icon
             [src]="
               !isVisiblePassword
-                ? '../../../../assets/ion-icons/eye-outline.svg'
-                : '../../../../assets/ion-icons/eye-off-outline.svg'
+                ? '../../../../assets/icons/eye-outline.svg'
+                : '../../../../assets/icons/eye-off-outline.svg'
             "
             (click)="viewPassword()"
           ></ion-icon>
@@ -44,8 +44,8 @@
   </ion-button>
   <span class="separator">o</span>
   <div class="FormLogin__buttons">
-    <ion-button><ion-icon slot="start" src="../../../../assets/ion-icons/google.svg"></ion-icon><span>Continuar con google</span></ion-button>
-    <ion-button><ion-icon slot="start" src="../../../../assets/ion-icons/apple.svg"></ion-icon><span>Continuar con Apple</span></ion-button>
-    
+    <ion-button><ion-icon slot="start" src="../../../../assets/icons/google.svg"></ion-icon><span>Continuar con google</span></ion-button>
+    <ion-button><ion-icon slot="start" src="../../../../assets/icons/apple.svg"></ion-icon><span>Continuar con Apple</span></ion-button>
   </div>
+  <a class="FormLogin__navigate" routerLink="/register">Crear cuenta</a>
 </form>
