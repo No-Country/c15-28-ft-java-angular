@@ -8,10 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "usuario")
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class Usuario {
 
     @Id
@@ -19,11 +16,9 @@ public class Usuario {
     private Long id;
     @Column(name = "nombre", nullable = false, length = 15)
     private String nombre;
-    @Column(name = "email",unique = true, nullable = false)
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
+    @Column(name = "password", nullable = false)
+    private String password;
 
-    public Usuario(String nombre, String email) {
-        this.nombre = nombre;
-        this.email = email;
-    }
 }
