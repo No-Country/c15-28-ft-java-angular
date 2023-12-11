@@ -1,0 +1,51 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="FormLogin">
+  <h2 class="FormLogin__title">Iniciar sesión</h2>
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Email"
+        type="email"
+        errorText="Ingrese un email valido"
+        color="primary"
+        name="email"
+        formControlName="email"
+        labelPlacement="floating"
+        placeholder="Ingrese su email"
+      ></ion-input>
+    </ion-item>
+    @if(!loginForm.get('email')?.errors){
+    <ion-item>
+      <ion-input
+        label="Contraseña"
+        errorText="La contraseña tiene que tener un número una contraseña, una letra minuscula, mayuscula y un simbolo especial = '@$!%*?&', y no tiene que contener espacios."
+        [type]="isVisiblePassword ? 'text' : 'password'"
+        color="primary"
+        name="password"
+        formControlName="password"
+        labelPlacement="floating"
+        placeholder="Ingrese su contraseña"
+      >
+        <ion-button type="button" slot="end" (click)="viewPassword()">
+          <ion-icon
+            [src]="
+              !isVisiblePassword
+                ? '../../../../assets/icons/eye-outline.svg'
+                : '../../../../assets/icons/eye-off-outline.svg'
+            "
+            (click)="viewPassword()"
+          ></ion-icon>
+        </ion-button>
+      </ion-input>
+    </ion-item>
+    }
+  </ion-list>
+  <ion-button [disabled]="loginForm.invalid" type="submit" expand="block">
+    <span> Enviar </span>
+  </ion-button>
+  <span class="separator">o</span>
+  <div class="FormLogin__buttons">
+    <ion-button><ion-icon slot="start" src="../../../../assets/icons/google.svg"></ion-icon><span>Continuar con google</span></ion-button>
+    <ion-button><ion-icon slot="start" src="../../../../assets/icons/apple.svg"></ion-icon><span>Continuar con Apple</span></ion-button>
+  </div>
+  <a class="FormLogin__navigate" routerLink="/register">Crear cuenta</a>
+</form>

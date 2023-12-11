@@ -1,0 +1,35 @@
+<ion-content fullscreen="true" color="dark" class="Register">
+  <form [formGroup]="registerForm" (ngSubmit)="signUp()" class="FormLogin">
+    <h2 class="FormLogin__title">Registrarse</h2>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Email" type="email" errorText="Ingrese un email valido" color="primary" name="email"
+          formControlName="email" labelPlacement="floating" placeholder="Ingrese su email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Nombre de usuario" type="text" color="primary" errorText="Este campo no puede estar vacío"
+          name="username" formControlName="username" labelPlacement="floating"
+          placeholder="Ingrese su nombre de usuario"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Contraseña"
+          errorText="La contraseña tiene que tener un número una contraseña, una letra minuscula, mayuscula y un simbolo especial = '@$!%*?&', y no tiene que contener espacios."
+          type="password" color="primary" name="password" formControlName="password" labelPlacement="floating"
+          placeholder="Ingrese su contraseña">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button [disabled]="registerForm.invalid" type="submit" expand="block">
+      <span> Registrar </span>
+    </ion-button>
+    <span class="separator">o</span>
+    <div class="FormLogin__buttons">
+      <ion-button><ion-icon slot="start" src="../../../../assets/icons/google.svg"></ion-icon><span>Continuar con
+          google</span></ion-button>
+      <ion-button><ion-icon slot="start" src="../../../../assets/icons/apple.svg"></ion-icon><span>Continuar con
+          Apple</span></ion-button>
+    </div>
+    <a class="FormLogin__navigate" routerLink="/login">¿Ya tienes una cuenta? Inicia sesión</a>
+  </form>
+</ion-content>

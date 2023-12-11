@@ -1,0 +1,103 @@
+.FormLogin {
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 100dvh;
+  min-height: 90dvh;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &__title{
+    color: #C7C6C6;
+    padding: 3rem;
+  }
+
+  .separator{
+    margin: 1.825rem 0 0 0;
+    text-align: center;
+    position: relative;
+    color: #C7C6C6;
+    &::after, &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        display: block;
+        background: #C7C6C6;
+        height: 1px;
+        width: calc(50% - 10px);
+    }
+    &::after{
+        right: 0;
+    }
+    &::before {
+        left: 0;
+    }
+  }
+
+  &__buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__navigate{
+    margin-top: .8rem;
+    padding: .3rem;
+    color: #C7C6C6;
+    text-decoration: unset;
+    &:link{
+      color: #C7C6C6;
+    }
+  }
+}
+
+ion-list {
+  background: transparent;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+ion-item {
+  border-radius: 0.565rem;
+  --background: #343030;
+}
+
+ion-input {
+  --background: transparent;
+  --color: #ffffff;
+  --padding-bottom: 4px;
+  --padding-end: 4px;
+  --padding-start: 4px;
+  --padding-top: 4px;
+  --placeholder-color: #c7c6c6;
+  --placeholder-font-style: initial;
+  --placeholder-font-weight: initial;
+  --placeholder-opacity: 0.5;
+  ion-button {
+    --border-radius: 0;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --border-width: 0px;
+    outline: 0px;
+    --border-color: unset;
+    margin: 0;
+    --box-shadow: none;
+    position: relative;
+    ion-icon {
+      margin: 1rem;
+    }
+  }
+}
+
+ion-button {
+  max-height: 3.938rem;
+}
+
+ion-icon {
+  --border-width: 0px;
+}

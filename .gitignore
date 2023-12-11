@@ -1,4 +1,3 @@
-
 frontend/crypto-app/.firebase/exchangenocountry/hosting/styles-7V6XFIVV.css
 frontend/crypto-app/.firebase/exchangenocountry/hosting/polyfills-LZBJRJJE.js
 frontend/crypto-app/.firebase/exchangenocountry/hosting/main-IBEG3ZFW.js
@@ -12,6 +11,7 @@ frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-E5ZMF6EL.js
 frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-6PUADJS6.js
 frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-3DA2EXJX.js
 frontend/crypto-app/.firebase/hosting.LmZpcmViYXNlXGV4Y2hhbmdlbm9jb3VudHJ5XGhvc3Rpbmc.cache
+
 frontend/crypto-app/.firebase/exchangenocountry/hosting/assets/img/dolar.png
 frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-2LLBYDM4.js
 frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-42KTLUN2.js
@@ -20,5 +20,11 @@ frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-CNEHVZAH.js
 frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-QLBCDQLD.js
 frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-RQHMQDUI.js
 frontend/crypto-app/.firebase/exchangenocountry/hosting/chunk-TGZ73QPI.js
+
+frontend/crypto-app/.firebase/exchangenocountry/hosting/favicon.ico
+frontend/crypto-app/.firebase/exchangenocountry/hosting/index.html
 frontend/crypto-app/.firebase/exchangenocountry/hosting/main-QFHFNABG.js
+frontend/crypto-app/.firebase/exchangenocountry/hosting/polyfills-LZBJRJJE.js
 frontend/crypto-app/.firebase/exchangenocountry/hosting/styles-WOPWDY7B.css
+frontend/crypto-app/.firebase/hosting.LmZpcmViYXNlXGV4Y2hhbmdlbm9jb3VudHJ5XGhvc3Rpbmc.cache
+Backend/CryptoCoin/src/main/resources/data.sql
