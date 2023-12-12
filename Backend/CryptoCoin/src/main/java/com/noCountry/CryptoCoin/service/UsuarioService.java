@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -26,6 +27,7 @@ public class UsuarioService {
             usuario.setEmail(dto.getEmail());
             String passHashed = encriptarContrasenia(dto.getPassword());
             usuario.setPassword(passHashed);
+            usuario.setSaldo(100000.0);
 
             return usuarioRepositoryJPA.save(usuario);
         }
@@ -46,5 +48,9 @@ public class UsuarioService {
         String passHashed = DatatypeConverter
                 .printHexBinary(digest).toUpperCase();
         return passHashed;
+    }
+
+    public Optional<Usuario> buscarPorId(Long id) {
+        return usuarioRepositoryJPA.findById(id);
     }
 }
