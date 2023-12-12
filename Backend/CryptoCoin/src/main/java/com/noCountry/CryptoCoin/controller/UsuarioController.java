@@ -1,6 +1,8 @@
 package com.noCountry.CryptoCoin.controller;
 
+import com.noCountry.CryptoCoin.controller.DTO.MonedaDTO;
 import com.noCountry.CryptoCoin.controller.DTO.UsuarioDTO;
+import com.noCountry.CryptoCoin.domain.Moneda;
 import com.noCountry.CryptoCoin.domain.Usuario;
 import com.noCountry.CryptoCoin.service.UsuarioService;
 import lombok.AllArgsConstructor;
@@ -31,6 +33,11 @@ public class UsuarioController {
         return usuarioService.buscarPorId(id);
     }
 
+    @PostMapping("/comprar")
+    public Usuario getUsuarios(@RequestBody MonedaDTO monedaDTO, @RequestParam Long id) {
+        return usuarioService.agregarCompra(monedaDTO, id);
+    }
+
     @PostMapping("/guardarUsuario")
     public ResponseEntity guardarUsuario(@RequestBody UsuarioDTO dto) throws NoSuchAlgorithmException {
         return ResponseEntity.ok(usuarioService.guardarUsuario(dto));
@@ -45,5 +52,10 @@ public class UsuarioController {
         } else {
             return ResponseEntity.badRequest().body("Usuario o contraseña incorrectos");
         }
+    }
+
+    @GetMapping("/listarMonedas")
+    public List<Moneda> listarMonedas(@RequestParam Long id) {
+        return usuarioService.listaDeMonedasDeUnUsuario(id);
     }
 }
