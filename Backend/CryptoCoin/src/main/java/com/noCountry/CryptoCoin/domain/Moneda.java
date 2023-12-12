@@ -3,19 +3,18 @@ package com.noCountry.CryptoCoin.domain;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
+
 @Entity
-@Table(name = "Moneda")
+@Table(name = "moneda")
 @Data
 public class Moneda {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "moneda", nullable = false)
-    private TipoDeMoneda moneda;
-    @Column(name = "cantidad", nullable = false)
-    private String cantidad;
-    @Column(name = "precio", nullable = false)
+    private TipoDeMoneda tipoDeMoneda;
+    private Double cantidad;
     private Double precio;
-
+    private String fecha;
 }

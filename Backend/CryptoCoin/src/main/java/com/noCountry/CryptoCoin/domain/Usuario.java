@@ -3,7 +3,6 @@ package com.noCountry.CryptoCoin.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Currency;
 import java.util.List;
 
 @Entity
@@ -23,6 +22,5 @@ public class Usuario {
     @Column(name = "saldo", nullable = false)
     private Double saldo;
     @OneToMany
-    @Column(name= "lista", nullable = false)
-    private List<Moneda> listaDeMonedasCompradas;
+    private List<Moneda> monedas;
 }
