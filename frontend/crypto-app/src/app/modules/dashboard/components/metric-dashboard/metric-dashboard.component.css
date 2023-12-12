@@ -1,0 +1,18 @@
+.Metric{
+    display: grid;
+    padding: 2rem;
+    grid-template-areas: 
+        "title title"
+        "graphic graphic"
+        "graphic graphic"
+    ;
+}
+
+.Metric__title{
+    display: inline;
+    grid-area: title;
+}
+.Metric__graphic{
+    display: inline-block;
+    grid-area: graphic;
+}

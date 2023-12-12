@@ -2,3 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+
+    --primary-color: #6157FF;
+    --background-dark-contrast: #343030;
+    --background-dark-color: #1E1E1E;
+    --primary-color-gradient-1: #6157FF;
+    --primary-color-gradient-2:#EE94FD;
+    --text-color: #C7C6C6;
+
+}
+
+body {
+    background-color: var(--background-dark-color);
+    color: var(--text-color);
+}
