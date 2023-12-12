@@ -1,11 +1,10 @@
 package com.noCountry.CryptoCoin.controller.DTO;
 
-import com.noCountry.CryptoCoin.domain.Moneda;
 import com.noCountry.CryptoCoin.domain.TipoDeMoneda;
 import lombok.Data;
 
 @Data
-public class MonedaDTO extends Moneda {
+public class MonedaDTO {
 
     private TipoDeMoneda tipoDeMoneda;
     private Double cantidad;
