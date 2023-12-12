@@ -28,7 +28,7 @@ public class UsuarioController {
         return usuarioService.getAll();
     }
 
-    @GetMapping("/id")
+    @GetMapping("/buscarPorId")
     public Optional<Usuario> getUsuarios(@RequestParam Long id) {
         return usuarioService.buscarPorId(id);
     }
@@ -54,7 +54,7 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping("/listarMonedas")
+    @GetMapping("/listarMonedasCompradas")
     public List<Moneda> listarMonedas(@RequestParam Long id) {
         return usuarioService.listaDeMonedasDeUnUsuario(id);
     }

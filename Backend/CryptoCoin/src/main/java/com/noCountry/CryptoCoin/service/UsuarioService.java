@@ -33,7 +33,7 @@ public class UsuarioService {
             usuario.setEmail(dto.getEmail());
             String passHashed = encriptarContrasenia(dto.getPassword());
             usuario.setPassword(passHashed);
-            usuario.setSaldo(100000.0);
+            usuario.setSaldo(100000.0); // aca le harcodeo la el dinero sino hay que ponerlo en el DTO y que llegue la info del front
 
             return usuarioRepositoryJPA.save(usuario);
         }
