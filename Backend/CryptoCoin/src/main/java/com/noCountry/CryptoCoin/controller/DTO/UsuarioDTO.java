@@ -10,4 +10,6 @@ public class UsuarioDTO {
     private String email;
 
     private String password;
+
+    private Double saldo;
 }
