@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.noCountry.CryptoCoin.CryptoCoinApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.08 s -- in com.noCountry.CryptoCoin.CryptoCoinApplicationTests
