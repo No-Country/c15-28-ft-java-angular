@@ -1,7 +1,10 @@
 package com.noCountry.CryptoCoin.service;
 
+import com.noCountry.CryptoCoin.controller.DTO.MonedaDTO;
 import com.noCountry.CryptoCoin.controller.DTO.UsuarioDTO;
+import com.noCountry.CryptoCoin.domain.Moneda;
 import com.noCountry.CryptoCoin.domain.Usuario;
+import com.noCountry.CryptoCoin.repository.MonedaRepositoryJPA;
 import com.noCountry.CryptoCoin.repository.UsuarioRepositoryJPA;
 import jakarta.xml.bind.DatatypeConverter;
 import lombok.AllArgsConstructor;
@@ -9,13 +12,17 @@ import org.springframework.stereotype.Service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class UsuarioService {
 
     private final UsuarioRepositoryJPA usuarioRepositoryJPA;
+    private final MonedaRepositoryJPA monedaRepositoryJPA;
 
     public Usuario guardarUsuario(UsuarioDTO dto) throws NoSuchAlgorithmException {
         if (dto.getNombre() == null || dto.getNombre().isEmpty()) {
@@ -26,6 +33,7 @@ public class UsuarioService {
             usuario.setEmail(dto.getEmail());
             String passHashed = encriptarContrasenia(dto.getPassword());
             usuario.setPassword(passHashed);
+            usuario.setSaldo(100000.0); // aca le harcodeo la el dinero sino hay que ponerlo en el DTO y que llegue la info del front
 
             return usuarioRepositoryJPA.save(usuario);
         }
@@ -46,5 +54,33 @@ public class UsuarioService {
         String passHashed = DatatypeConverter
                 .printHexBinary(digest).toUpperCase();
         return passHashed;
+    }
+
+    public Optional<Usuario> buscarPorId(Long id) {
+        return usuarioRepositoryJPA.findById(id);
+    }
+
+    public Usuario agregarCompra(MonedaDTO monedaDTO, Long id) {
+        var usuario = usuarioRepositoryJPA.findById(id).get();
+        Moneda moneda = new Moneda();
+        moneda.setCantidad(monedaDTO.getCantidad());
+        moneda.setTipoDeMoneda(monedaDTO.getTipoDeMoneda());
+        moneda.setPrecio(monedaDTO.getPrecio());
+
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formattedDate = myDateObj.format(myFormatObj);
+        moneda.setFecha(formattedDate);
+
+        monedaRepositoryJPA.save(moneda);
+
+        usuario.getMonedas().add(moneda);
+
+        return usuarioRepositoryJPA.save(usuario);
+    }
+
+    public List<Moneda> listaDeMonedasDeUnUsuario(Long id) {
+        var usuario = usuarioRepositoryJPA.findById(id).get();
+        return usuario.getMonedas();
     }
 }
